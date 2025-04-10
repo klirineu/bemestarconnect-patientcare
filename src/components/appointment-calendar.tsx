@@ -42,7 +42,7 @@ type Appointment = {
   patientName: string;
   date: Date;
   type: string;
-  status: "confirmed" | "pending" | "cancelled";
+  status: string;
 };
 
 // Mock data for appointments
