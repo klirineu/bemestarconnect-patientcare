@@ -37,14 +37,22 @@ import {
   User,
 } from "lucide-react";
 
+type Appointment = {
+  id: string;
+  patientName: string;
+  date: Date;
+  type: string;
+  status: "confirmed" | "pending" | "cancelled";
+};
+
 // Mock data for appointments
-const MOCK_APPOINTMENTS = [
+const MOCK_APPOINTMENTS: Appointment[] = [
   {
     id: "1",
     patientName: "John Doe",
     date: new Date(2023, 9, 15, 10, 0),
     type: "Consultation",
-    status: "confirmed",
+    status: "confirmed", // aqui é aceito porque está dentro de um Appointment[]
   },
   {
     id: "2",
@@ -61,14 +69,6 @@ const MOCK_APPOINTMENTS = [
     status: "pending",
   },
 ];
-
-type Appointment = {
-  id: string;
-  patientName: string;
-  date: Date;
-  type: string;
-  status: "confirmed" | "pending" | "cancelled";
-};
 
 export function AppointmentCalendar() {
   const [date, setDate] = useState<Date | undefined>(new Date());
