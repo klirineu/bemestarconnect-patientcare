@@ -181,6 +181,15 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
           <ClipboardList className="mr-2 h-4 w-4" /> Treatment Plans
         </Link>
       </Button>
+      <Button
+        variant={isActive("/dashboard/treatment-plans") ? "default" : "ghost"}
+        size="sm"
+        asChild
+      >
+        <Link href="/dashboard/treatment-plans">
+          <ClipboardList className="mr-2 h-4 w-4" /> Treatment Plans
+        </Link>
+      </Button>
     </>
   );
 }
